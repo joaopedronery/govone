@@ -1,0 +1,17 @@
+.footerContainer {
+    background-color: #14314F;
+}
+
+.footerContainer p {
+    text-align: center;
+    color: #ffffff !important;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    .footerContainer p {
+        width: 80%;
+        margin: 0 auto;
+    }
+}

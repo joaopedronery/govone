@@ -19,6 +19,12 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 800px;
-    width: 80vw;
+    height: 750px;
+    width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+    .spinnerContainer {
+        height: 660px;
+    }
 }

@@ -2,7 +2,9 @@ import styles from './Footer.module.css';
 
 function Footer() {
     return (
-        <h1>footer</h1>
+        <div className={styles.footerContainer}>
+            <p>&copy; 2022 Todo o conteúdo deste site está publicado sob a licença da GovOne.</p>
+        </div>
     )
 }
 

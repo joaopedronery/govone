@@ -2,3 +2,87 @@
     background-color: #007fff;
     width: 100%;
 }
+
+.navbarContainer h1 {
+    font-size: 32px;
+}
+
+.navbarContainer p {
+    font-size: 16px;
+}
+
+.elementsContainer {
+    width: 54%;
+    margin: 0 auto;
+    padding: 40px 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.elementsContainer p {
+    color: #ffffff !important;
+}
+
+.titleContainer {
+    width: 80%;
+}
+
+.logoContainer span {
+    font-size: 75px !important;
+}
+
+@media screen and (max-width: 1500px) {
+    .elementsContainer {
+        width: 70%;
+    }
+
+    
+}
+
+@media screen and (max-width: 900px) {
+    .elementsContainer {
+        width: 80%;
+    }
+
+    .navbarContainer h1 {
+        font-size: 24px;
+    }
+    
+    .navbarContainer p {
+        font-size: 14px;
+    }
+
+    .logoContainer span {
+        font-size: 60px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .elementsContainer {
+        flex-direction: column-reverse;
+    }
+
+    .logoContainer span {
+        font-size: 45px !important;
+    }
+
+    .navbarContainer h1 {
+        text-align: center;
+    }
+
+    .navbarContainer p {
+        text-align: center;
+    }
+
+    .titleContainer {
+        width: 100%;
+    }
+
+    .logoContainer {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+}

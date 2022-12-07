@@ -1,4 +1,6 @@
 import styles from './NewsCard.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 type PropTypes = {
     slug: string;
@@ -13,12 +15,14 @@ type PropTypes = {
 
 function NewsCard({resumo, slug, titulo, conteudo, imagem_destaque_url, categoria_titulo, created_at, updated_at}: PropTypes) {
     
-    function titleFilter(title: string): string {
-        if (title.length >= 46) {
-            let newTitle = title.slice(0, 45) + '...';
-            return newTitle
+    const navigate = useNavigate();
+
+    function characterFilter(string: string, maxChar: number): string {
+        if (string.length >= maxChar) {
+            let filteredString = string.slice(0, maxChar) + '...';
+            return filteredString
         } else {
-            return title
+            return string
         }
     }
 
@@ -72,8 +76,12 @@ function NewsCard({resumo, slug, titulo, conteudo, imagem_destaque_url, categori
         return `${day} de ${month} de ${year}`
     }
     
+    function handleClick(): void {
+        navigate(`/news/${slug}`)
+    }
+
     return (
-        <div className={styles.cardContainer}>
+        <div onClick={handleClick} className={styles.cardContainer}>
             <div className={styles.imgContainer}>
                 <img src={imagem_destaque_url} />
             </div>
@@ -82,10 +90,10 @@ function NewsCard({resumo, slug, titulo, conteudo, imagem_destaque_url, categori
                     {categoria_titulo.toUpperCase()}
                 </p>
                 <h2>
-                    {titleFilter(titulo)}
+                    {characterFilter(titulo, 46)}
                 </h2>
                 <p>
-                    {resumo}
+                    {characterFilter(resumo, 130)}
                 </p>
                 <div className={styles.date}>
                     <div className={styles.iconContainer}>
@@ -93,6 +101,7 @@ function NewsCard({resumo, slug, titulo, conteudo, imagem_destaque_url, categori
                         edit_calendar
                         </span>
                     </div>
+                    <p className={styles.published}>Publicado: </p>
                     <p className={styles.dateP}>
                         {dateFilter(created_at)}
                     </p>

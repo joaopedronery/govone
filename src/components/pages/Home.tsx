@@ -1,6 +1,6 @@
 import styles from './Home.module.css';
 import NewsCard from '../layout/NewsCard';
-import {useEffect, useState} from 'react';
+import {ReactElement, ReactNode, useEffect, useState} from 'react';
 import LoadingSpinner from '../layout/LoadingSpinner';
 
 function Home() {

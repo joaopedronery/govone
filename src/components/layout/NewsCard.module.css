@@ -5,7 +5,15 @@
     height: 226px;
     margin-bottom: 16px;
     box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01), 0px 21px 21px rgba(60, 76, 112, 0.09);
+    transition: 0.5s;
 }
+
+.cardContainer:hover {
+    cursor: pointer;
+    background-color: #2721211a;
+    transition: 0.5s;
+}
+
 
 .cardContainer h2 {
     font-size: 24px;
@@ -31,6 +39,10 @@
 .iconContainer {
     display: flex;
     margin-right: 5px;
+}
+
+.published {
+    padding-right: 3px;
 }
 
 .date {
@@ -63,6 +75,10 @@ p {
         font-size: 16px;
     }
 
+    .published {
+        padding-right: 0;
+        display: none;
+    }
 
     p {
         padding: 12px 0;
@@ -118,7 +134,7 @@ p {
 
     .cardContainer {
         display: block;
-        height: 425px;
+        height: 435px;
     }
 
     .infoContainer {
