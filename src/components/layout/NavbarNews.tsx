@@ -9,7 +9,7 @@ type PropsType = {
     imagem_destaque_url: string;
 }
 
-function NavbarNews({imagem_destaque_url, titulo, categoria_titulo, autor_nome, created_at}: PropsType) {
+function NavbarNews({ imagem_destaque_url, titulo, categoria_titulo, autor_nome, created_at}: PropsType) {
 
 
     return (
@@ -18,8 +18,10 @@ function NavbarNews({imagem_destaque_url, titulo, categoria_titulo, autor_nome, 
             <div className={styles.elementsContainer}>
                 <p>{categoria_titulo.toUpperCase()}</p>
                 <h1>{titulo}</h1>
-                <p><span>Autor: </span>{autor_nome}</p>
-                <p><span>Publicado em: </span>{created_at}</p>
+                <div className={styles.authorPublishedContainer}>
+                    <p><span>Autor: </span>{autor_nome}</p>
+                    <p><span>Publicado em: </span>{created_at}</p>
+                </div>
             </div>
         </div>
         <div className={styles.subNavbarContainer}>

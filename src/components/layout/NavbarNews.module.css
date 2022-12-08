@@ -24,6 +24,14 @@
     padding: 40px 0;
 }
 
+.authorPublishedContainer {
+    margin-top: 25px;
+}
+
+.authorPublishedContainer p {
+    padding: 5px 0;
+}
+
 .subNavbarContainer {
     height: 56px;
     background-color: #ffffff;
@@ -102,11 +110,24 @@
     .elementsContainer {
         width: 70%;
     }
+
+    .subElementsContainer {
+        width: 70%;
+    }
 }
 
 
 @media screen and (max-width: 900px) {
     .elementsContainer {
+        width: 80%;
+        padding-top: 25px;
+    }
+
+    .authorPublishedContainer {
+        margin-top: 10px;
+    }
+
+    .subElementsContainer {
         width: 80%;
     }
 
@@ -149,6 +170,10 @@
 
 @media screen and (max-width: 500px) {
     .elementsContainer {
+        width: 90%;
+    }
+
+    .subElementsContainer {
         width: 90%;
     }
 

@@ -1,3 +1,7 @@
+.imageContainer {
+    margin-bottom: 30px;
+}
+
 .imageContainer p{
     text-align: center;
 }
@@ -13,4 +17,61 @@
     height: 100%;
     width: 100%;
     border-radius: 5px;
+}
+
+.contentContainer img {
+    height: 429px;
+    width: 100%;
+}
+
+.contentContainer p{
+    width: 100%;
+    text-align: justify;
+}
+
+.categoryParagraph {
+    width: 100%;
+    text-align: start;
+    font-weight: 700;
+}
+
+.categoryParagraph span{
+    color: #208FFF !important;
+    font-weight: 500;
+}
+
+hr {
+    background-color: #63636367 !important;
+    border: none;
+    height: 1px;
+}
+
+@media screen and (max-width: 1500px) {
+    .imageSubContainer {
+        height: 320px;
+    }
+
+    .contentContainer img {
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .imageSubContainer {
+        height: 250px;
+    }
+
+    .contentContainer img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .imageSubContainer {
+        height: 160px;
+    }
+
+    .contentContainer img {
+        height: 160px;
+    }
 }

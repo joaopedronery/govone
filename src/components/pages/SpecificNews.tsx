@@ -3,6 +3,7 @@ import styles from './SpecificNews.module.css';
 import Container from '../layout/Container';
 import {useState} from 'react';
 import { useLocation } from 'react-router-dom';
+import parse from 'html-react-parser';
 
 function SpecificNews() {
     
@@ -20,6 +21,16 @@ function SpecificNews() {
                     </div>
                     <p>Foto: {state.descricao_imagem}</p>
                 </div>
+                <div className={styles.contentContainer}>
+                    {parse(state.conteudo)}
+                </div>
+                <p className={styles.categoryParagraph}>Categorias: <span>{state.categoria_titulo}</span></p>
+            </div>
+        </Container>
+        <hr></hr>
+        <Container>
+            <div className={styles.relatedNewsContainer}>
+                <h2>hello</h2>
             </div>
         </Container>
         </>
