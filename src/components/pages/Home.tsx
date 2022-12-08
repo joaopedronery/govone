@@ -2,6 +2,8 @@ import styles from './Home.module.css';
 import NewsCard from '../layout/NewsCard';
 import {ReactElement, ReactNode, useEffect, useState} from 'react';
 import LoadingSpinner from '../layout/LoadingSpinner';
+import Navbar from '../layout/Navbar';
+import Container from '../layout/Container';
 
 function Home() {
     
@@ -15,6 +17,8 @@ function Home() {
         imagem_destaque_url: string;
         created_at: string;
         updated_at: string;
+        autor_nome: string;
+        descricao_imagem: string;
     }] | []
     
     const [page, setPage] = useState<number>(1);
@@ -34,15 +38,20 @@ function Home() {
     
 
     return (
-        <div>
-            {!newsData ? <LoadingSpinner /> : (
-                newsData.map((item) => {
-                    return (
-                        <NewsCard key={item.id} resumo={item.resumo} titulo={item.titulo} slug={item.slug} conteudo={item.conteudo} categoria_titulo={item.categoria_titulo} imagem_destaque_url={item.imagem_destaque_url} created_at={item.created_at} updated_at={item.updated_at} />
-                    )
-                })
-            )}         
-        </div>
+        <>
+        <Navbar />
+        <Container>
+            <div>
+                {!newsData ? <LoadingSpinner /> : (
+                    newsData.map((item) => {
+                        return (
+                            <NewsCard key={item.id} descricao_imagem={item.descricao_imagem} autor_nome={item.autor_nome} resumo={item.resumo} titulo={item.titulo} slug={item.slug} conteudo={item.conteudo} categoria_titulo={item.categoria_titulo} imagem_destaque_url={item.imagem_destaque_url} created_at={item.created_at} updated_at={item.updated_at} />
+                        )
+                    })
+                )}         
+            </div>
+        </Container>
+        </>
     )
 }
 

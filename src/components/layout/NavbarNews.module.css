@@ -1,0 +1,168 @@
+.navbarContainer {
+    background-color: #007fff;
+    width: 100%;
+}
+
+.navbarContainer h1 {
+    font-size: 32px;
+    color: #ffffff !important;
+}
+
+.navbarContainer p {
+    font-size: 16px;
+    color: #ffffff !important;
+}
+
+.navbarContainer span {
+    font-size: 16px !important;
+    font-weight: 700;
+}
+
+.elementsContainer {
+    width: 54%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.subNavbarContainer {
+    height: 56px;
+    background-color: #ffffff;
+    box-shadow: 0px 85px 34px rgba(60, 76, 112, 0.01), 0px 21px 21px rgba(60, 76, 112, 0.09);
+}
+
+.subElementsContainer {
+    width: 54%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mediaContainer {
+    display: flex;
+}
+
+.navbarNewsSpan {
+    font-size: 20px !important;
+    padding-right: 5px;
+}
+
+.seeImageContainer {
+    display: flex;
+    align-items: center;
+    color:#007fff;
+}
+
+.seeImageContainer p {
+    color: #007fff !important;
+}
+
+.imageButton {
+    text-decoration: none;
+}
+
+.seeVideoContainer {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+
+.seeVideoContainer:hover {
+    cursor: pointer;
+}
+
+.socialMediaContainer {
+    display: flex;
+    align-items: center;
+    color: #888888;
+}
+
+.socialMediaContainer svg {
+    font-size: 20px;
+    margin: 0 8px;
+}
+
+.socialMediaContainer p {
+    margin-right: 8px;
+}
+
+.socialMediaContainer span {
+    margin-left: 5px;
+    font-size: 24px !important;
+}
+
+.socialMediaContainer svg:hover {
+    cursor: pointer;
+}
+
+.socialMediaContainer span:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1500px) {
+    .elementsContainer {
+        width: 70%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+    .elementsContainer {
+        width: 80%;
+    }
+
+    .elementsContainer h1 {
+        font-size: 24px;
+    }
+    
+    .responsiveText {
+        display: none;
+    }
+
+    .subNavbarContainer {
+        display: flex;
+        align-items: center;
+    }
+
+    .imageButton {
+        display: flex;
+        align-items: center;
+    }
+
+    .seeVideoContainer {
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+
+    .subElementsContainer {
+        justify-content: center;
+    }
+
+    .socialMediaContainer svg {
+        margin: 0 10px;
+    }
+
+    .socialMediaContainer span {
+        margin-left: 7px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .elementsContainer {
+        width: 90%;
+    }
+
+    .elementsContainer h1 {
+        text-align: center;
+        padding-bottom: 25px;
+    }
+
+    .elementsContainer p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .elementsContainer span {
+        font-size: 14px !important;
+    }
+}

@@ -11,9 +11,11 @@ type PropTypes = {
     created_at: string;
     updated_at: string;
     resumo: string;
+    autor_nome: string;
+    descricao_imagem: string;
 }
 
-function NewsCard({resumo, slug, titulo, conteudo, imagem_destaque_url, categoria_titulo, created_at, updated_at}: PropTypes) {
+function NewsCard({descricao_imagem, autor_nome, resumo, slug, titulo, conteudo, imagem_destaque_url, categoria_titulo, created_at, updated_at}: PropTypes) {
     
     const navigate = useNavigate();
 
@@ -77,7 +79,17 @@ function NewsCard({resumo, slug, titulo, conteudo, imagem_destaque_url, categori
     }
     
     function handleClick(): void {
-        navigate(`/news/${slug}`)
+        navigate(`/news/${slug}`, {
+            state: {
+                titulo: titulo,
+                categoria_titulo: categoria_titulo.toUpperCase(),
+                created_at: dateFilter(created_at),
+                imagem_destaque_url: imagem_destaque_url,
+                conteudo: conteudo,
+                autor_nome: autor_nome,
+                descricao_imagem: descricao_imagem
+            }
+        })
     }
 
     return (

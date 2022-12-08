@@ -1,0 +1,16 @@
+.imageContainer p{
+    text-align: center;
+}
+
+.imageSubContainer {
+    height: 429px;
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.imageSubContainer img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
