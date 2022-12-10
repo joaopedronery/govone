@@ -4,6 +4,7 @@ import {ReactElement, ReactNode, useEffect, useState} from 'react';
 import LoadingSpinner from '../layout/LoadingSpinner';
 import Navbar from '../layout/Navbar';
 import Container from '../layout/Container';
+import PageSelector from '../layout/PageSelector';
 
 function Home() {
     
@@ -22,6 +23,7 @@ function Home() {
     }] | []
     
     const [page, setPage] = useState<number>(1);
+    const [numberOfPages, setNumberOfPages] = useState<number>(0);
     const [newsData, setNewsData] = useState<NewsType>([]);
     useEffect(() => {
         fetch(`https://noticias-master.govone.digital/api/cms/noticias/?page=${page}`, {
@@ -32,10 +34,16 @@ function Home() {
             }
         })
         .then((res) => res.json())
-        .then((data) => setNewsData(data.results))
+        .then((data) => {
+            setNewsData(data.results);
+            setNumberOfPages(data.total_pages);
+        })
         .catch((error) => console.log(error))
     }, [page])
     
+    function handlePageClick(v: number): void {
+        setPage(v);
+    }
 
     return (
         <>
@@ -50,6 +58,7 @@ function Home() {
                     })
                 )}         
             </div>
+            <PageSelector numberOfPages={numberOfPages} page={page} setPage={handlePageClick} />
         </Container>
         </>
     )

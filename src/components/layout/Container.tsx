@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import styles from './Container.module.css';
 
-function Container({children}: {children: ReactNode }) {
+function Container({children, customClass}: {children: ReactNode, customClass?: string }) {
     return (
-        <div className={styles.container}>
+        <div className={customClass ? `${styles.container} ${styles[customClass]}` : styles.container }>
             {children}
         </div>
     )

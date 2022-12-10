@@ -1,0 +1,55 @@
+.pageSelectorContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 65px;
+}
+
+.pageSelectorContainer ul {
+    display: flex;
+    list-style: none;
+    width: 12%;
+    justify-content: space-around;
+}
+
+.pageSelectorContainer button {
+    border: none;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 10px 16px;
+}
+
+.pageSelectorContainer button span {
+    font-size: 18px !important;
+    color: #007fff;
+}
+
+.pageSelectorContainer button:hover {
+    cursor: pointer;
+}
+
+.disabledButton span{
+    color: #acadaf !important;
+    cursor: default;
+}
+
+.selected {
+    border-radius: 50px;
+    background-color: #007fff !important;
+    color: #ffffff;
+}
+
+.hiddenButton {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .pageSelectorContainer ul {
+        width: 28%;
+    }
+    
+    .pageSelectorContainer button {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}

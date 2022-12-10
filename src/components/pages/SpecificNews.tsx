@@ -4,6 +4,7 @@ import Container from '../layout/Container';
 import {useState} from 'react';
 import { useLocation } from 'react-router-dom';
 import parse from 'html-react-parser';
+import RelatedNewsCard from '../layout/RelatedNewsCard';
 
 function SpecificNews() {
     
@@ -28,9 +29,17 @@ function SpecificNews() {
             </div>
         </Container>
         <hr></hr>
-        <Container>
+        <Container customClass='noMinHeight'>
             <div className={styles.relatedNewsContainer}>
-                <h2>hello</h2>
+                <div className={styles.relatedNewsTitleContainer}>
+                    <h2>Conteúdo relacionado</h2>
+                    <p>Confira as últimas notícias do estado</p>
+                </div>
+                <div>
+                    <RelatedNewsCard imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
+                    <RelatedNewsCard imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
+                    <RelatedNewsCard imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
+                </div>
             </div>
         </Container>
         </>
