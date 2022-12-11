@@ -46,6 +46,20 @@ hr {
     height: 1px;
 }
 
+.relatedNewsTitleContainer {
+    margin-top: 40px;
+}
+
+.relatedNewsTitleContainer p {
+    padding-top: 8px;
+    padding-bottom: 40px;
+}
+
+.relatedNewsCardsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
 @media screen and (max-width: 1500px) {
     .imageSubContainer {
         height: 320px;
@@ -63,6 +77,18 @@ hr {
 
     .contentContainer img {
         height: 250px;
+    }
+
+    .relatedNewsCardsContainer {
+        flex-direction: column;
+    }
+
+    .relatedNewsTitleContainer h2{
+        text-align: center;
+    }
+
+    .relatedNewsTitleContainer p {
+        text-align: center;
     }
 }
 

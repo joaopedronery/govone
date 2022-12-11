@@ -28,62 +28,116 @@ function NewsCard({descricao_imagem, autor_nome, resumo, slug, titulo, conteudo,
         }
     }
 
-    function monthFilter(month: string): string {
+    function monthFilter(month: string, template: 'full' | 'abbrev'): string {
         var filteredMonth = '';
         switch (month) {
             case '01':
-            filteredMonth = 'Janeiro';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Janeiro';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Jan';
+                }
+                break;
             case '02':
-            filteredMonth = 'Fevereiro';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Fevereiro';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Fev';
+                }
+                break;
             case '03':
-            filteredMonth = 'Março';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Março';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Mar';
+                }
+                break;
             case '04':
-            filteredMonth = 'Abril';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Abril';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Abr';
+                }
+                break;
             case '05':
-            filteredMonth = 'Maio';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Maio';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Mai';
+                }
+                break;
             case '06':
-            filteredMonth = 'Junho';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Junho';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Jun';
+                }
+                break;
             case '07':
-            filteredMonth = 'Julho';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Julho';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Jul';
+                }
+                break;
             case '08':
-            filteredMonth = 'Agosto';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Agosto';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Ago';
+                }
+                break;
             case '09':
-            filteredMonth = 'Setembro';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Setembro';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Set';
+                }
+                break;
             case '10':
-            filteredMonth = 'Outubro';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Outubro';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Out';
+                }
+                break;
             case '11':
-            filteredMonth = 'Novembro';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Novembro';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Nov';
+                }
+                break;
             case '12':
-            filteredMonth = 'Dezembro';
-            break;
+                if (template === 'full') {
+                    filteredMonth = 'Dezembro';
+                } else if (template === 'abbrev') {
+                    filteredMonth = 'Dez';
+                }
+                break;
         }
         return filteredMonth
     }
 
-    function dateFilter(date: string): string {
+    function dateFilter(date: string, template: 'full' | 'abbrev'): string {
         const year = date.slice(0, 4);
-        const month = monthFilter(date.slice(5, 7));
+        const month = monthFilter(date.slice(5, 7), template);
         const day = date.slice(8, 10);
-        return `${day} de ${month} de ${year}`
-    }
+        if (template === 'full') {
+            return `${day} de ${month} de ${year}`
+        } else if (template === 'abbrev') {
+            return `${day} ${month}, ${year}`
+        }
+        return ''
+        }
     
     function handleClick(): void {
         navigate(`/news/${slug}`, {
             state: {
                 titulo: titulo,
                 categoria_titulo: categoria_titulo.toUpperCase(),
-                created_at: dateFilter(created_at),
+                created_at: dateFilter(created_at, 'full'),
+                created_at_abbrev: dateFilter(created_at, 'abbrev'),
                 imagem_destaque_url: imagem_destaque_url,
                 conteudo: conteudo,
                 autor_nome: autor_nome,
@@ -115,7 +169,7 @@ function NewsCard({descricao_imagem, autor_nome, resumo, slug, titulo, conteudo,
                     </div>
                     <p className={styles.published}>Publicado: </p>
                     <p className={styles.dateP}>
-                        {dateFilter(created_at)}
+                        {dateFilter(created_at, 'full')}
                     </p>
                 </div>
             </div>

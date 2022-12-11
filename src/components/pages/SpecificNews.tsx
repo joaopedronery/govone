@@ -35,10 +35,10 @@ function SpecificNews() {
                     <h2>Conteúdo relacionado</h2>
                     <p>Confira as últimas notícias do estado</p>
                 </div>
-                <div>
-                    <RelatedNewsCard imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
-                    <RelatedNewsCard imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
-                    <RelatedNewsCard imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
+                <div className={styles.relatedNewsCardsContainer}>
+                    <RelatedNewsCard created_at={state.created_at_abbrev} imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
+                    <RelatedNewsCard created_at={state.created_at_abbrev} imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
+                    <RelatedNewsCard created_at={state.created_at_abbrev} imagem_destaque_url={state.imagem_destaque_url} categoria_titulo={state.categoria_titulo}/>
                 </div>
             </div>
         </Container>
