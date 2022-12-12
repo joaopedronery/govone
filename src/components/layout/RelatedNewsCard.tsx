@@ -2,13 +2,14 @@ import styles from './RelatedNewsCard.module.css';
 import { useNavigate } from 'react-router-dom';
 
 
-function RelatedNewsCard({imagem_destaque_url, categoria_titulo, created_at, titulo, slug, categoria_slug}: {imagem_destaque_url: string; categoria_titulo: string; created_at: string; titulo: string; slug:string; categoria_slug: string}) {
+function RelatedNewsCard({imagem_destaque_url, categoria_titulo, created_at, titulo, slug, categoria_slug, id}: {imagem_destaque_url: string; categoria_titulo: string; created_at: string; titulo: string; slug:string; categoria_slug: string; id: number}) {
     const navigate = useNavigate();
     
     function handleClick(): void {
         navigate(`/news/${slug}`, {
             state: {
-                categoria_slug: categoria_slug
+                categoria_slug: categoria_slug,
+                id: id
             }
         })
     }

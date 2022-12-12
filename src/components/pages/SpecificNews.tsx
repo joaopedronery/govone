@@ -23,6 +23,7 @@ function SpecificNews() {
         while (limit < 3) {
             if (relatedNews[index].id === state.id) {
                 index = index + 1;
+                console.log(`catch ${relatedNews[index].id} ${state.id}`)
                 continue
             } else {
                 filteredArray.push(relatedNews[index]);
@@ -59,7 +60,7 @@ function SpecificNews() {
         }
         })
         .then((res) => res.json())
-        .then((data) => setRelatedNewsData(data.results))
+        .then((data) => setRelatedNewsData(filterRelatedNews(data.results)))
     }, [slug])
 
     console.log(relatedNewsData);
@@ -90,8 +91,8 @@ function SpecificNews() {
                     <p>Confira as últimas notícias do estado</p>
                 </div>
                 <div className={styles.relatedNewsCardsContainer}>
-                    {filterRelatedNews(relatedNewsData).map((item: any) => (
-                        <RelatedNewsCard key={item.id} categoria_slug={item.categoria_slug} slug={item.slug} titulo={item.titulo} created_at={item.created_at} imagem_destaque_url={item.imagem_destaque_url} categoria_titulo={item.categoria_titulo}/>
+                    {relatedNewsData.map((item: any) => (
+                        <RelatedNewsCard key={item.id} id={item.id} categoria_slug={item.categoria_slug} slug={item.slug} titulo={item.titulo} created_at={item.created_at} imagem_destaque_url={item.imagem_destaque_url} categoria_titulo={item.categoria_titulo}/>
                     ))}
                 </div>
             </div>
