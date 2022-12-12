@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/govone/static/css/main.11ccb90e.css",
+    "main.js": "/govone/static/js/main.f68c940b.js",
+    "index.html": "/govone/index.html",
+    "main.11ccb90e.css.map": "/govone/static/css/main.11ccb90e.css.map",
+    "main.f68c940b.js.map": "/govone/static/js/main.f68c940b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.11ccb90e.css",
+    "static/js/main.f68c940b.js"
+  ]
+}
