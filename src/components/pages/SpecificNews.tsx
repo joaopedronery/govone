@@ -90,7 +90,7 @@ function SpecificNews() {
                     <p>Confira as últimas notícias do estado</p>
                 </div>
                 <div className={styles.relatedNewsCardsContainer}>
-                    {slug && filterRelatedNews(relatedNewsData).map((item: any) => (
+                    {filterRelatedNews(relatedNewsData).map((item: any) => (
                         <RelatedNewsCard key={item.id} categoria_slug={item.categoria_slug} slug={item.slug} titulo={item.titulo} created_at={item.created_at} imagem_destaque_url={item.imagem_destaque_url} categoria_titulo={item.categoria_titulo}/>
                     ))}
                 </div>
