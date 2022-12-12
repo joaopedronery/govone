@@ -20,6 +20,7 @@ function Home() {
         updated_at: string;
         autor_nome: string;
         descricao_imagem: string;
+        categoria_slug: string;
     }] | []
     
     const [page, setPage] = useState<number>(1);
@@ -53,7 +54,7 @@ function Home() {
                 {!newsData ? <LoadingSpinner /> : (
                     newsData.map((item) => {
                         return (
-                            <NewsCard key={item.id} descricao_imagem={item.descricao_imagem} autor_nome={item.autor_nome} resumo={item.resumo} titulo={item.titulo} slug={item.slug} conteudo={item.conteudo} categoria_titulo={item.categoria_titulo} imagem_destaque_url={item.imagem_destaque_url} created_at={item.created_at} updated_at={item.updated_at} />
+                            <NewsCard key={item.id} id={item.id} categoria_slug={item.categoria_slug} descricao_imagem={item.descricao_imagem} autor_nome={item.autor_nome} resumo={item.resumo} titulo={item.titulo} slug={item.slug} conteudo={item.conteudo} categoria_titulo={item.categoria_titulo} imagem_destaque_url={item.imagem_destaque_url} created_at={item.created_at} updated_at={item.updated_at} />
                         )
                     })
                 )}         

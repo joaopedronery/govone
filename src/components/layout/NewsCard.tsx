@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 type PropTypes = {
+    id: number;
     slug: string;
     titulo: string;
     conteudo: string;
@@ -13,9 +14,10 @@ type PropTypes = {
     resumo: string;
     autor_nome: string;
     descricao_imagem: string;
+    categoria_slug: string;
 }
 
-function NewsCard({descricao_imagem, autor_nome, resumo, slug, titulo, conteudo, imagem_destaque_url, categoria_titulo, created_at, updated_at}: PropTypes) {
+function NewsCard({id, descricao_imagem, autor_nome, resumo, slug, titulo, conteudo, imagem_destaque_url, categoria_titulo, created_at, updated_at, categoria_slug}: PropTypes) {
     
     const navigate = useNavigate();
 
@@ -134,14 +136,8 @@ function NewsCard({descricao_imagem, autor_nome, resumo, slug, titulo, conteudo,
     function handleClick(): void {
         navigate(`/news/${slug}`, {
             state: {
-                titulo: titulo,
-                categoria_titulo: categoria_titulo.toUpperCase(),
-                created_at: dateFilter(created_at, 'full'),
-                created_at_abbrev: dateFilter(created_at, 'abbrev'),
-                imagem_destaque_url: imagem_destaque_url,
-                conteudo: conteudo,
-                autor_nome: autor_nome,
-                descricao_imagem: descricao_imagem
+                categoria_slug: categoria_slug,
+                id: id
             }
         })
     }
